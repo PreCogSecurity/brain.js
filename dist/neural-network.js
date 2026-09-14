@@ -40,8 +40,6 @@ var _zeros2 = _interopRequireDefault(_zeros);
 
 var _thaw = require('thaw.js');
 
-var _thaw2 = _interopRequireDefault(_thaw);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -581,7 +579,7 @@ var NeuralNetwork = function () {
 
       return new Promise(function (resolve, reject) {
         try {
-          var thawedTrain = new _thaw2.default(new Array(_this4.trainOpts.iterations), {
+          var thawedTrain = new _thaw.Thaw(new Array(_this4.trainOpts.iterations), {
             delay: true,
             each: function each() {
               return _this4._trainingTick(data, status, endTime) || thawedTrain.stop();
